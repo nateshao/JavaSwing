@@ -18,10 +18,10 @@ import java.sql.Connection;
 import java.util.Properties;
 import javax.swing.LayoutStyle.ComponentPlacement;
 /**
- * @date Created by é‚µæ¡æ° on 2022/6/6 16:47
- * @å¾®ä¿¡å…¬ä¼—å· åƒç¾½çš„ç¼–ç¨‹æ—¶å…‰
- * @ä¸ªäººç½‘ç«™ www.nateshao.cn
- * @åšå®¢ https://nateshao.gitlab.io
+ * @date Created by ÉÛÍ©½Ü on 2022/6/6 16:47
+ * @Î¢ĞÅ¹«ÖÚºÅ Ç§ÓğµÄ±à³ÌÊ±¹â
+ * @¸öÈËÍøÕ¾ www.nateshao.cn
+ * @²©¿Í https://nateshao.gitlab.io
  * @GitHub https://github.com/nateshao
  * @Gitee https://gitee.com/nateshao
  * Description:
@@ -57,7 +57,7 @@ public class LogOnFrm extends JFrame {
                 }
             }
         });
-        //åŠ è½½ç”¨æˆ·é€‰æ‹©çš„è®°ä½å¯†ç é€‰é¡¹
+        //¼ÓÔØÓÃ»§Ñ¡ÔñµÄ¼Ç×¡ÃÜÂëÑ¡Ïî
         classLoader = LogOnFrm.class.getClassLoader();
         pro.load(classLoader.getResourceAsStream("user_information.properties"));
         isSelected = Boolean.parseBoolean(pro.getProperty("isSelected"));
@@ -81,47 +81,47 @@ public class LogOnFrm extends JFrame {
         setContentPane(contentPane);
 
         JLabel label = new JLabel("\u7528\u6237\u767B\u5F55\u548C\u6CE8\u518C");
-        label.setFont(new Font("å®‹ä½“", Font.PLAIN, 20));
+        label.setFont(new Font("ËÎÌå", Font.PLAIN, 20));
 
         JLabel lblNewLabel = new JLabel("\u7528\u6237\u540D:");
-        lblNewLabel.setFont(new Font("å®‹ä½“", Font.PLAIN, 20));
+        lblNewLabel.setFont(new Font("ËÎÌå", Font.PLAIN, 20));
 
         JLabel label_1 = new JLabel("\u5BC6\u7801:");
-        label_1.setFont(new Font("å®‹ä½“", Font.PLAIN, 20));
+        label_1.setFont(new Font("ËÎÌå", Font.PLAIN, 20));
 
         userNameTxt = new JTextField();
-        userNameTxt.setFont(new Font("å®‹ä½“", Font.PLAIN, 20));
+        userNameTxt.setFont(new Font("ËÎÌå", Font.PLAIN, 20));
         userNameTxt.setColumns(10);
 
         passwordTxt = new JPasswordField();
-        passwordTxt.setFont(new Font("å®‹ä½“", Font.PLAIN, 20));
+        passwordTxt.setFont(new Font("ËÎÌå", Font.PLAIN, 20));
         passwordTxt.setColumns(10);
 
         rememberChe = new JCheckBox("\u8BB0\u4F4F\u5BC6\u7801");
         rememberChe.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {       //checkBox æ—¶é—´å“åº”
+            public void actionPerformed(ActionEvent e) {       //checkBox Ê±¼äÏìÓ¦
                 rememberPassword(e);
             }
         });
         JButton btnNewButton = new JButton("\u767B\u5F55");
-        //ç™»å½•äº‹ä»¶
+        //µÇÂ¼ÊÂ¼ş
         btnNewButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 loginAction(e);
             }
         });
 
-        btnNewButton.setFont(new Font("å®‹ä½“", Font.PLAIN, 20));
+        btnNewButton.setFont(new Font("ËÎÌå", Font.PLAIN, 20));
         JButton button = new JButton("\u6CE8\u518C");
 
-        //æ³¨å†Œäº‹ä»¶
+        //×¢²áÊÂ¼ş
         button.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 registerAction(e);
             }
         });
 
-        button.setFont(new Font("å®‹ä½“", Font.PLAIN, 20));
+        button.setFont(new Font("ËÎÌå", Font.PLAIN, 20));
         JLabel lbldblogin = new JLabel("\u6570\u636E\u5E93\u540D:login");
         JLabel lblTuser = new JLabel("\u8868\u540D: t_user");
         GroupLayout gl_contentPane = new GroupLayout(contentPane);
@@ -186,12 +186,12 @@ public class LogOnFrm extends JFrame {
                                 .addContainerGap(37, Short.MAX_VALUE))
         );
         contentPane.setLayout(gl_contentPane);
-        //è®¾ç½®çª—ä½“å±…ä¸­æ˜¾ç¤º
+        //ÉèÖÃ´°Ìå¾ÓÖĞÏÔÊ¾
         this.setLocationRelativeTo(null);
         initSelected();
     }
 
-    //æ³¨å†Œæ–¹æ³•çš„å®ç°
+    //×¢²á·½·¨µÄÊµÏÖ
     private void registerAction(ActionEvent e) {
 
         dispose();
@@ -201,17 +201,17 @@ public class LogOnFrm extends JFrame {
     }
 
 
-    //ç™»å½•æ–¹æ³•çš„å®ç°
+    //µÇÂ¼·½·¨µÄÊµÏÖ
     private void loginAction(ActionEvent e) {
         String userName = userNameTxt.getText().toString();
         String password = new String(passwordTxt.getPassword());
-        if (StringUtils.isEmpty(userName)) { //åˆ¤æ–­ç”¨æˆ·åæ˜¯å¦ä¸ºç©º
-            JOptionPane.showMessageDialog(null, "ç”¨æˆ·åä¸èƒ½ä¸ºç©ºï¼"); //å¦‚æœç”¨æˆ·åä¸ºç©º åˆ™æç¤ºç”¨æˆ·
+        if (StringUtils.isEmpty(userName)) { //ÅĞ¶ÏÓÃ»§ÃûÊÇ·ñÎª¿Õ
+            JOptionPane.showMessageDialog(null, "ÓÃ»§Ãû²»ÄÜÎª¿Õ£¡"); //Èç¹ûÓÃ»§ÃûÎª¿Õ ÔòÌáÊ¾ÓÃ»§
             return;
         }
 
         if (StringUtils.isEmpty(password)) {
-            JOptionPane.showMessageDialog(null, "å¯†ç ä¸èƒ½ä¸ºç©ºï¼"); //å¦‚æœå¯†ç ä¸ºç©º åˆ™æç¤ºç”¨æˆ·
+            JOptionPane.showMessageDialog(null, "ÃÜÂë²»ÄÜÎª¿Õ£¡"); //Èç¹ûÃÜÂëÎª¿Õ ÔòÌáÊ¾ÓÃ»§
             return;
         }
         User user = new User(userName, password);
@@ -226,7 +226,7 @@ public class LogOnFrm extends JFrame {
 
 
             } else {
-                JOptionPane.showMessageDialog(null, "ç”¨æˆ·åæˆ–å¯†ç é”™è¯¯"); //å¦‚æœç”¨æˆ·åä¸ºç©º åˆ™æç¤ºç”¨æˆ·
+                JOptionPane.showMessageDialog(null, "ÓÃ»§Ãû»òÃÜÂë´íÎó"); //Èç¹ûÓÃ»§ÃûÎª¿Õ ÔòÌáÊ¾ÓÃ»§
             }
 
         } catch (Exception e2) {
@@ -239,14 +239,14 @@ public class LogOnFrm extends JFrame {
     private void rememberPassword(ActionEvent e) {
 
         try {
-            out = new BufferedWriter(new FileWriter("D:\\Eclipse_J2EE_workspace\\LoginSystem\\src\\user_information.properties"));
+            out = new BufferedWriter(new FileWriter("F:\\GitHub--Gitee\\2022-test\\login\\src\\user_information.properties"));
         } catch (IOException e1) {
             // TODO Auto-generated catch block
             e1.printStackTrace();
         }
-        if (rememberChe.isSelected()) {  //é€‰ä¸­çŠ¶æ€
+        if (rememberChe.isSelected()) {  //Ñ¡ÖĞ×´Ì¬
 
-            System.out.println("é€‰ä¸­");
+            System.out.println("Ñ¡ÖĞ");
             isSelected = true;
 
             pro.setProperty("isSelected", "true");
@@ -254,7 +254,7 @@ public class LogOnFrm extends JFrame {
             pro.setProperty("password", passwordTxt.getText());
             try {
                 pro.store(out, "");
-                System.out.println("è®¾ç½®ProæˆåŠŸ");
+                System.out.println("ÉèÖÃPro³É¹¦");
             } catch (IOException e1) {
                 // TODO Auto-generated catch block
                 e1.printStackTrace();
@@ -262,14 +262,14 @@ public class LogOnFrm extends JFrame {
 
 
         } else {
-            System.out.println("æœªé€‰ä¸­");
+            System.out.println("Î´Ñ¡ÖĞ");
             isSelected = false;
             pro.setProperty("isSelected", "false");
             pro.setProperty("username", "");
             pro.setProperty("password", "");
             try {
                 pro.store(out, "");
-                System.out.println("è®¾ç½®ProæˆåŠŸ");
+                System.out.println("ÉèÖÃPro³É¹¦");
             } catch (IOException e1) {
                 // TODO Auto-generated catch block
                 e1.printStackTrace();
